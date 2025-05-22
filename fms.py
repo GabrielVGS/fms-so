@@ -62,7 +62,7 @@ def monitor_process(proc: psutil.Process, start_time: float, child_cpu_quota: fl
 
 
             if mem > memory_limit_mb:
-                print(f"❌ Memória excedida: {mem:.2f}MB > {memory_limit_mb:.2f}MB")
+                print(f"Memória excedida: {mem:.2f}MB > {memory_limit_mb:.2f}MB")
                 terminate_process_tree(proc)
                 raise MemoryError
 
@@ -101,7 +101,7 @@ def run_fms():
             print("Valor inválido. Tente novamente.")
 
     while not shutdown_flag:
-        print("\n🔁 Novo programa para execução")
+        print("\nNovo programa para execução")
 
         binary = input("Caminho do executável: ").strip()
         if not os.path.isfile(binary) or not os.access(binary, os.X_OK):
